@@ -15,7 +15,6 @@ const ItemCount = () => {
                     <p className="text-light bg-dark counter-number">{counter}</p>
                     <button onClick={sumarCantidad} type="button" className="btn btn-outline-light">+</button>  
                 </div>
-                <p>Stock disponible: {stock}</p>
             </div>
 }
 
