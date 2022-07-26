@@ -40,12 +40,12 @@ const Item = () => {
           <p className="card-text">Precio: {producto.precio}</p>
           <p className="card-text">Stock: {producto.stock}</p>
           <p className="card-text">Cantidad: {producto.cantidad} kg</p>
-          <ItemCount/>
+          <ItemCount stock={10}/>
           <button type="button" className="btn btn-primary">Agregar</button>
       </div>
-  </div>
+    </div>
      ))}
-         </>
+    </>
   )
 }
 
