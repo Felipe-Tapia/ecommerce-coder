@@ -19,32 +19,28 @@ const getFetch = () => {
 
 const Item = () => {
     const[productos, setProductos] = useState([])
-    const[loading, setLoading] = useState(true)
   
     useEffect(() => {
       getFetch()
       .then(data => { setProductos(data) }) 
       .catch(error => { console.log(error) })
-      .finally(() => setLoading(false))
     } , [])
   
     console.log(productos)
   return (
     <>
-    { loading? <p>Cargando...</p> 
-    : 
-    productos?.map(producto => ( 
+
       <div className="card">
       <div className="card-body">
-          <h5 className="card-title">{producto.nombre}</h5>
-          <p className="card-text">Precio: {producto.precio}</p>
-          <p className="card-text">Stock: {producto.stock}</p>
-          <p className="card-text">Cantidad: {producto.cantidad} kg</p>
+          <h5 className="card-title">{12}</h5>
+          <p className="card-text">Precio: {12}</p>
+          <p className="card-text">Stock: {12}</p>
+          <p className="card-text">Cantidad: {12} kg</p>
           <ItemCount/>
           <button type="button" className="btn btn-primary">Agregar</button>
       </div>
   </div>
-     ))}
+     
          </>
   )
 }

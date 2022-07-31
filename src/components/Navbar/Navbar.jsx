@@ -1,48 +1,46 @@
 import React from 'react';
 import CartWidget from './CartWidget/CartWidget';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css';
+import logo from "../../img/logo.svg"
 
 
 
-const Navbar = () => {
+const NavBar = () => {
     
   return (
-    <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-white border border-info">
-            <a className="navbar-brand" href="#">
-                <img src="./logo.png" alt="logo" />
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">
+            <a className="navbar-brand" href="www.google.com">
+                <img src={logo} alt="logo" />
             </a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <a className="nav-link" href="#">Reservas</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Entradas</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Platos de fondo</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Postres</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Agregados</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Bebestibles</a>
-                    </li>
-                </ul>
-            </div>
-            <CartWidget />
-        </nav>
-    </>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Reservas</Nav.Link>
+            <NavDropdown title="Carta" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Entradas</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.2">Fondos</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.3">Postres</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Agregados</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+        <CartWidget />
+      </Container>
+    </Navbar>
     );
 }
 
 
 
-export default Navbar
+export default NavBar
